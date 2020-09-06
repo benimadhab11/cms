@@ -1,7 +1,5 @@
 package com.bmk.cms.config;
 
-import com.bmk.cms.config.JwtAuthenticationEntryPoint;
-import com.bmk.cms.config.JwtRequestFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
