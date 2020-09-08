@@ -23,7 +23,8 @@ public class CmsApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/post/createPost").allowedOrigins("https://nameless-bayou-51205.herokuapp.com");
+				registry.addMapping("/post/**")
+						.allowedOrigins("https://nameless-bayou-51205.herokuapp.com");
 			}
 		};
 	}
