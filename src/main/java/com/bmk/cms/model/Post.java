@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,6 +30,7 @@ public class Post implements Serializable {
     private String title;
 
     @Lob
+    @Type(type = "org.hibernate.type.TextType")
     private String content;
     private String author;
     private String status;
