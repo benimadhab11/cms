@@ -8,6 +8,7 @@ import lombok.Setter;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
@@ -26,6 +27,8 @@ public class Post implements Serializable {
     private UUID postId;
 
     private String title;
+
+    @Lob
     private String content;
     private String author;
     private String status;
