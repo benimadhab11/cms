@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
+
 
 @RestController
 public class ConsumerController {
@@ -21,13 +23,13 @@ public class ConsumerController {
     }
 
     @RequestMapping(value = "/post/updatePost/{postId}", method = RequestMethod.PUT)
-    public ResponseEntity<String> updatePost(@RequestBody PostDto postDto, @PathVariable("postId") String postId) {
+    public ResponseEntity<String> updatePost(@RequestBody PostDto postDto, @PathVariable("postId") UUID postId) {
         postService.updatePost(postId, postDto);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @RequestMapping(value = "/post/deletePost/{postId}", method = RequestMethod.DELETE)
-    public ResponseEntity<String> removePost(@PathVariable("postId") String postId) {
+    public ResponseEntity<String> removePost(@PathVariable("postId") UUID postId) {
         postService.deletePost(postId);
         return ResponseEntity.status(HttpStatus.OK).build();
     }

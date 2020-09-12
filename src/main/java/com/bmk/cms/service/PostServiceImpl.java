@@ -7,10 +7,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class PostServiceImpl implements PostService{
@@ -32,13 +29,13 @@ public class PostServiceImpl implements PostService{
     }
 
     @Override
-    public PostDto deletePost(String id) {
+    public PostDto deletePost(UUID id) {
         postRepository.deleteById(id);
         return null;
     }
 
     @Override
-    public PostDto updatePost(String id, PostDto postDto) {
+    public PostDto updatePost(UUID id, PostDto postDto) {
         Optional<Post> optionalPost = postRepository.findById(id);
         if(optionalPost.isPresent()){
             postRepository.save(updateToEntity(optionalPost.get(),postDto));
