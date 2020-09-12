@@ -28,8 +28,9 @@ public class Post implements Serializable {
     private String title;
 
     @Lob
-    @Column(columnDefinition="LONGTEXT")
+    @Column(columnDefinition="TEXT")
     private String content;
+
     private String author;
     private String status;
     private Date date;
