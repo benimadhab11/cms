@@ -28,7 +28,6 @@ public class Post implements Serializable {
     private String title;
 
     @Lob
-    @Type(type = "org.hibernate.type.TextType")
     @Column(columnDefinition="LONGTEXT")
     private String content;
     private String author;
