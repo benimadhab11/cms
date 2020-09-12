@@ -10,4 +10,6 @@ public interface PostService {
 
     public List<PostDto> getAllPosts();
     public PostDto createPost(PostDto postDto);
+    public PostDto deletePost(Integer id);
+    public PostDto updatePost(Integer id, PostDto postDto);
 }
