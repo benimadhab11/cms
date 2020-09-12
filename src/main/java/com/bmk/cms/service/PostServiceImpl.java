@@ -32,13 +32,13 @@ public class PostServiceImpl implements PostService{
     }
 
     @Override
-    public PostDto deletePost(Integer id) {
+    public PostDto deletePost(String id) {
         postRepository.deleteById(id);
         return null;
     }
 
     @Override
-    public PostDto updatePost(Integer id, PostDto postDto) {
+    public PostDto updatePost(String id, PostDto postDto) {
         Optional<Post> optionalPost = postRepository.findById(id);
         if(optionalPost.isPresent()){
             postRepository.save(updateToEntity(optionalPost.get(),postDto));
