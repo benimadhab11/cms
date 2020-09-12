@@ -12,11 +12,11 @@ import java.util.Date;
 import java.util.UUID;
 
 @Entity
+@Table(name = "posts")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "posts")
 public class Post implements Serializable {
 
     private static final long serialVersionUID = -2318546838178804959L;
