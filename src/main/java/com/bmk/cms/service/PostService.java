@@ -10,6 +10,7 @@ import java.util.UUID;
 public interface PostService {
 
     public List<PostDto> getAllPosts();
+    public PostDto getPost(UUID id);
     public PostDto createPost(PostDto postDto);
     public PostDto deletePost(UUID id);
     public PostDto updatePost(UUID id, PostDto postDto);

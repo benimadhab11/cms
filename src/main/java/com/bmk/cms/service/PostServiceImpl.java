@@ -23,6 +23,15 @@ public class PostServiceImpl implements PostService{
     }
 
     @Override
+    public PostDto getPost(UUID id) {
+        Optional<Post> optionalPost = postRepository.findById(id);
+        if(optionalPost.isPresent()){
+            return convertToDto(optionalPost.get());
+        }
+    return null;
+    }
+
+    @Override
     public PostDto createPost(PostDto postDto) {
         postRepository.save(convertToEntity(postDto));
         return null;
@@ -50,6 +59,10 @@ public class PostServiceImpl implements PostService{
         });
 
         return allPostDtos;
+    }
+
+    private PostDto convertToDto(Post post){
+        return modelMapper.map(post, PostDto.class);
     }
 
     private Post convertToEntity(PostDto postDto) {
