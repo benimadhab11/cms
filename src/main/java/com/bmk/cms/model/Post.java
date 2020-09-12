@@ -6,10 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.Type;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Lob;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
@@ -31,6 +28,7 @@ public class Post implements Serializable {
 
     @Lob
     @Type(type = "org.hibernate.type.TextType")
+    @Column(columnDefinition="LONGTEXT")
     private String content;
     private String author;
     private String status;
