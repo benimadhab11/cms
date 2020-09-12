@@ -21,14 +21,14 @@ public class ConsumerController {
     }
 
     @RequestMapping(value = "/post/updatePost/{postId}", method = RequestMethod.PUT)
-    public ResponseEntity<String> updatePost(@RequestBody PostDto postDto, @PathVariable("postId") int postId) {
-        postService.updatePost(postId, postDto);
+    public ResponseEntity<String> updatePost(@RequestBody PostDto postDto, @PathVariable("postId") String postId) {
+        postService.updatePost(Integer.parseInt(postId), postDto);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @RequestMapping(value = "/post/deletePost/{postId}", method = RequestMethod.DELETE)
-    public ResponseEntity<String> removePost(@PathVariable("postId") int postId) {
-        postService.deletePost(postId);
+    public ResponseEntity<String> removePost(@PathVariable("postId") String postId) {
+        postService.deletePost(Integer.parseInt(postId));
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
