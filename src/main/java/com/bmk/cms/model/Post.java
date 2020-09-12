@@ -16,6 +16,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Getter
 @Setter
+@Table(name = "posts")
 public class Post implements Serializable {
 
     private static final long serialVersionUID = -2318546838178804959L;
