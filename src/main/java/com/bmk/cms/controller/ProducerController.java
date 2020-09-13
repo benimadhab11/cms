@@ -21,7 +21,7 @@ public class ProducerController {
         return new ResponseEntity<Object>(postService.getAllPosts(), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/post/{postId}", method = RequestMethod.GET)
+    @RequestMapping(value = "/post/getOne/{postId}", method = RequestMethod.GET)
     public ResponseEntity<Object> getPost(@PathVariable("postId") UUID postId) {
         return new ResponseEntity<Object>(postService.getPost(postId), HttpStatus.OK);
     }
